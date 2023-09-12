@@ -99,15 +99,15 @@ npm install -g pnpm
 
 ## Backend
 
-2. Go to the `open-source-project/backend` directory
+5. Go to the `open-source-project/backend` directory
 
-3. Install NPM packages
+6. Install NPM packages
 
    ```sh
    pnpm install
    ```
 
-4. Run the dev command
+7. Run the dev command
 
    ```sh
    pnpm run dev
