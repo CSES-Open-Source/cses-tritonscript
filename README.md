@@ -6,6 +6,21 @@
 
 Welcome to the CSES Open Source Class Notes Repository Project! This repository is a collaborative effort undertaken by the Computer Science and Engineering Society (CSES) at the University of California, San Diego (UCSD). In this README, we'll provide an overview of the project, how it works, and how you can contribute.
 
+# Project Leaderboard
+
+Here are the top contributors to our project:
+
+1. [Yashil Vora](https://github.com/yashilvora19) - 10 commits
+2. [Hogun Kim](https://github.com/03hgryan) - 8 commits
+3. [Georgio Feghani](link_to_contributor_3) - 7 commits
+4. [Mishka Jethwani](link_to_contributor_4) - 6 commits
+5. [Random name](link_to_contributor_5) - 5 commits
+
+***Total commits as of 09/18/2023: 32 commits***
+
+Thank you to all our contributors for their hard work and dedication!
+
+
 ### About the Project
 
 Our goal is to create a platform where every CSES member can actively contribute to building a valuable resource for UCSD students. We aim to develop a community-driven forum for sharing class notes and educational resources. This project encompasses the following key features:
@@ -27,7 +42,7 @@ We encourage all CSES members to actively participate in this open-source projec
 
 3. **Commit & Push:** Make your changes, commit them, and push your branch to your forked repository.
 
-4. **Open a Pull Request:** Once you're ready to contribute, open a pull request from your branch to this main repository. Describe your changes, and our team will review it.
+4. **Open a Pull Request:** Once you're ready to contribute, open a pull request from your branch to this main repository. Describe your changes, and our team will review it. **Dont forget to include your contact information in the PR (email).**
 
 5. **Collaboration:** Engage in discussions within the pull request and make any necessary revisions based on feedback from the community.
 
@@ -39,11 +54,13 @@ We believe in recognizing and rewarding our contributors. By actively participat
 
 - **CSES Membership Points:** Accumulate points in your CSES membership, boosting your involvement and recognition within the society.
 
+- **Priority For Applying to Board:** Your contributions give you priority while applying for board positions at CSES.
+
 - **Access to Free Merchandise:** Gain access to exclusive CSES merchandise as a token of appreciation for your contributions.
 
 - **Early Access to Career Fairs:** Get a head start on your career journey with early access to UCSD career fairs.
 
-- **Gift Cards and More:** Additional rewards may include gift cards and other exciting incentives.
+- **Gift Cards and More:** Additional rewards include gift cards and other exciting incentives.
 
 We invite you to be a part of this exciting initiative, shaping the future of student resources at UCSD while building your own skills and achieving recognition within CSES.
 
@@ -57,9 +74,10 @@ Happy coding!
 
 **Open Source Team:**
 
-- Yashil Vora: Projects Chair
-- Hogun Kim: Software
-- Georgio Feghali: Software Developer
+- Yashil Vora: Projects Chair (yvora@ucsd.edu)
+- Hogun Kim: Software Developer (hok008@ucsd.edu)
+- Georgio Feghali: Software Developer (gfeghali@ucsd.edu)
+- Mishka Jethwani: Software Developer (mjethwani@ucsd.edu)
 
 Feel free to get in touch with any of us if you have questions!
 
@@ -112,3 +130,7 @@ npm install -g pnpm
    ```sh
    pnpm run dev
    ```
+
+## Milestones
+
+Complete any of the milestones to redeem points and rewards. We will contact you when your PR is approved!
