@@ -9,7 +9,7 @@ Welcome to the CSES Open Source Class Notes Repository Project! This repository 
 Join our [discord](https://discord.gg/pP4B9u25Vs) here!
 
 ## Issues
-You can find all the open issues under the "Issues" tab. Choose one of the issues and implement that feature following the steps described [here](#how-it-works).
+You can find all the open issues under the "Issues" tab. Choose one of the issues and implement that feature following the steps described [here](#how-it-works). Whenever you open a pull request (step 4 in the steps described), make sure you add the corresponding issue to the PR.
 
 # Project Leaderboard
 
