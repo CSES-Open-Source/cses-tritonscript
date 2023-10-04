@@ -6,6 +6,7 @@ import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
 import user from "./routes/user";
 import auth from "./routes/auth";
+import note from "./routes/note";
 import settings from "./utils/config";
 
 dotenv.config();
@@ -24,6 +25,7 @@ app.use(cors({ credentials: true, origin: settings.domain }));
 
 app.use("/api/user", user);
 app.use("/api/auth", auth);
+app.use("/api/note", note);
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Express + TypeScript Server");
