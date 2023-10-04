@@ -6,6 +6,8 @@ import About from "./pages/About";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Profile from "./pages/Profile";
+import Note from "./pages/Note";
+import Upload from "./pages/Upload";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Route element={<PrivateRoute />}>
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/note" element={<Note />} />
+          <Route path="/upload" element={<Upload />} />
         </Route>
       </Routes>
     </BrowserRouter>
