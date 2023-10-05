@@ -3,8 +3,9 @@ import settings from "../utils/config";
 import { v4 as uuidv4 } from "uuid";
 
 export default function Upload() {
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState({ title: "", classInfo: "", description: "", username: "" });
   const [file, setFile] = useState<File | null>(null);
+  const [isUploading, setIsUploading] = useState(false);
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       setFile(e.target.files[0]);
@@ -16,8 +17,11 @@ export default function Upload() {
   async function handleSubmit(e: any) {
     e.preventDefault();
     const id = uuidv4();
-    console.log(id);
-    console.log("form", formData);
+
+    if (formData.title === "" || formData.classInfo === "" || formData.description === "" || formData.username === "")
+      return alert("Please fill out all fields");
+    if (file === null) return alert("Please upload a file");
+    setIsUploading(true);
     const res = await fetch(`${settings.domain}/api/note/${id}`, {
       method: "POST",
       headers: {
@@ -41,11 +45,21 @@ export default function Upload() {
         await new Promise((resolve) => setTimeout(resolve, 5000));
       }
     }
+    setIsUploading(false);
+    alert("Upload Success!");
+    setFormData({ title: "", classInfo: "", description: "", username: "" });
+    setFile(null);
   }
   return (
     <div>
       Upload
       {/* <button onClick={upload}>ss</button> */}
+      <div>
+        <label htmlFor="file" className="sr-only">
+          Choose a file
+        </label>
+        <input accept="application/pdf" id="file" type="file" onChange={handleFileChange} />
+      </div>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <input
           type="text"
@@ -75,14 +89,9 @@ export default function Upload() {
           className="bg-slate-100 p-3 rounded-lg"
           onChange={handleChange}
         />
-        <button>dd</button>
+        <button>upload</button>
       </form>
-      <div>
-        <label htmlFor="file" className="sr-only">
-          Choose a file
-        </label>
-        <input accept="application/pdf" id="file" type="file" onChange={handleFileChange} />
-      </div>
+      <div>{isUploading ? "uploading..." : ""}</div>
     </div>
   );
 }
