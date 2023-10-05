@@ -1,3 +1,4 @@
+import settings from "../utils/config";
 export default function NoteBlock(props: any) {
   return (
     <div style={{ width: "100%", height: "200px", border: "5px solid #222222" }}>
@@ -11,7 +12,7 @@ export default function NoteBlock(props: any) {
       <br />
       uploaded at: <a>{props.note.createdAt}</a>
       <br />
-      download note <a href={"https://pub-b9b49ff013814531ac1fd761116a6067.r2.dev/" + props.note.file_id}>download</a>
+      download note <a href={settings.r2devUrl + props.note.file_id}>download</a>
       {/* Todo: Make a preview of the note */}
     </div>
   );
