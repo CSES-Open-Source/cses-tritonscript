@@ -30,7 +30,7 @@ const noteSchema = new mongoose_1.default.Schema({
         required: false,
         unique: false,
     },
-    username: {
+    uploader: {
         type: String,
         required: false,
         unique: false,
