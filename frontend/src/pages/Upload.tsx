@@ -1,9 +1,11 @@
 import { useState } from "react";
 import settings from "../utils/config";
 import { v4 as uuidv4 } from "uuid";
+import { useSelector } from "react-redux";
 
 export default function Upload() {
-  const [formData, setFormData] = useState({ title: "", classInfo: "", description: "", username: "" });
+  const { currentUser } = useSelector((state: any) => state.user);
+  const [formData, setFormData] = useState({ title: "", classInfo: "", description: "", uploader: "" });
   const [file, setFile] = useState<File | null>(null);
   const [isUploading, setIsUploading] = useState(false);
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -18,10 +20,11 @@ export default function Upload() {
     e.preventDefault();
     const id = uuidv4();
 
-    if (formData.title === "" || formData.classInfo === "" || formData.description === "" || formData.username === "")
+    if (formData.title === "" || formData.classInfo === "" || formData.description === "")
       return alert("Please fill out all fields");
     if (file === null) return alert("Please upload a file");
     setIsUploading(true);
+    formData["uploader"] = currentUser.username;
     const res = await fetch(`${settings.domain}/api/note/${id}`, {
       method: "POST",
       headers: {
@@ -47,7 +50,7 @@ export default function Upload() {
     }
     setIsUploading(false);
     alert("Upload Success!");
-    setFormData({ title: "", classInfo: "", description: "", username: "" });
+    setFormData({ title: "", classInfo: "", description: "", uploader: "" });
     setFile(null);
   }
   return (
@@ -79,13 +82,6 @@ export default function Upload() {
           type="text"
           placeholder="description"
           id="description"
-          className="bg-slate-100 p-3 rounded-lg"
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          placeholder="username"
-          id="username"
           className="bg-slate-100 p-3 rounded-lg"
           onChange={handleChange}
         />

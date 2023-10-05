@@ -1,16 +1,18 @@
 export default function NoteBlock(props: any) {
   return (
-    <div>
-      Note FIle : <a>{props.note.title}</a>
+    <div style={{ width: "100%", height: "200px", border: "5px solid #222222" }}>
+      Title : <a>{props.note.title}</a>
       <br />
-      <a>{props.note.classInfo}</a>
+      Class: <a>{props.note.classInfo}</a>
       <br />
-      <a>{props.note.description}</a>
+      Description: <a>{props.note.description}</a>
       <br />
-      <a>{props.note.username}</a>
-      <a>
-        https://pub-b9b49ff013814531ac1fd761116a6067.r2.dev/ <a>{props.note.file_id}</a>
-      </a>
+      uploader: <a>{props.note.uploader}</a>
+      <br />
+      uploaded at: <a>{props.note.createdAt}</a>
+      <br />
+      download note <a href={"https://pub-b9b49ff013814531ac1fd761116a6067.r2.dev/" + props.note.file_id}>download</a>
+      {/* Todo: Make a preview of the note */}
     </div>
   );
 }
