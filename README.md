@@ -21,25 +21,21 @@ Here are the top contributors to our project:
 4. [Mishka Jethwani](link_to_contributor_4) - 6 commits
 5. [Nabil Khoury](link_to_contributor_5) - 5 commits
 
-***Total commits as of 09/18/2023: 32 commits***
-
 Thank you to all our contributors for their hard work and dedication!
-
 
 ### About the Project
 
 Our goal is to create a platform where every CSES member can actively contribute to building a valuable resource for UCSD students. We aim to develop a community-driven forum for sharing class notes and educational resources. This project encompasses the following key features:
 
 - **Repository of Class Notes:** A central repository where students can share their class notes and resources.
-- **Mobile App & Website:** Accessible through both a mobile app and a web platform for seamless usability.
 - **UCSD Credentials Login:** Securely log in using your UCSD credentials to ensure the authenticity of contributors.
-- **Course Contributions:** Any student can add a class they've taken and contribute by uploading their class notes.
-- **Mega-Repository:** A centralized hub with notes for various classes that anyone can contribute to.
+- **Course Contributions:** Any student can add a class they've taken and contribute by uploading their class/personal notes.
+- **Collaborative ed-platform:** A centralized hub with notes for various classes that anyone can contribute to.
 - **NLP Integration:** Potential integration of Natural Language Processing (NLP) to convert handwritten text to PDFs, verify uploaded documents, and more.
 
 ### How it Works
 
-We encourage all CSES members to actively participate in this open-source project. Here's how you can get involved:
+Here's how you can get involved:
 
 1. **Fork this Repository:** Start by forking this repository to your GitHub account.
 
@@ -47,7 +43,7 @@ We encourage all CSES members to actively participate in this open-source projec
 
 3. **Commit & Push:** Make your changes, commit them, and push your branch to your forked repository.
 
-4. **Open a Pull Request:** Once you're ready to contribute, open a pull request from your branch to this main repository. Describe your changes, and our team will review it. **Dont forget to include your contact information in the PR (email).**
+4. **Open a Pull Request:** Once you're ready to contribute, open a pull request from your branch to this main repository. Describe your changes, and our team will review it. **Dont forget to include your PID and email in the PR.**
 
 5. **Collaboration:** Engage in discussions within the pull request and make any necessary revisions based on feedback from the community.
 
@@ -136,11 +132,21 @@ npm install -g pnpm
 Complete any of the milestones to redeem points and rewards. We will contact you when your PR is approved! Put in your name, email, PID, year, and major in the pull request description in order for us to contact you with the rewards once you complete a milestone.
 
 Here are the current milestones:
-1.
-2.
-3.
-4.
-5.
+
+**US #1.1:** Create a Login Page that redirects to the UCSD user authentication page. (Frontend)
+
+**US #1.2:** Create a Login Page that redirects to the UCSD user authentication page. (Backend)
+
+**US #2:** Develop the user dashboard with an overview of recent notes, notifications, and upcoming events. (Frontend)
+
+**US #3:** Implement quick access links to different sections or pages of the website in the dashboard header. (Frontend)
+
+**US #4.1:** Create the Notes Upload Page with fields for adding a title, course info, description, tags, and attachment options (PDF, images, etc.). (Frontend)
+
+**US #4.2:** Create the Notes Upload Page with fields for adding a title, course info, description, tags, and attachment options (PDF, images, etc.). (Backend)
+
+**US #5.1:** Develop the Notes Listing Page with filters for sorting notes by course, date, popularity, or tags Frontend
+
 
 Feel free to work on any one of these milestones and submit a PR including your information. 
 
