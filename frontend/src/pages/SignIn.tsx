@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { signInStart, signInSuccess, signInFailure } from "../utils/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import settings from "../utils/config";
+import '../../src/index.css';
 
 export default function SignIn() {
   const dispatch = useDispatch();
@@ -54,7 +55,7 @@ export default function SignIn() {
       <div>
         <p>Dont Have an account?</p>
         <Link to="/signup">
-          <span>Sign up</span>
+          <span>Sign in with Google</span>
         </Link>
       </div>
       <p>{error ? error.message || "Something went wrong!" : ""}</p>

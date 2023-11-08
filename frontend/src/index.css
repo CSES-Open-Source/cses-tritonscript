@@ -1,4 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Anton');
+
 body {
   margin: 0;
   padding: 0;
+  background-image: linear-gradient(to right, #172554 75%, yellow );
+  font-family: 'Anton', sans-serif;
+}
+
+div {
+  text-align: center;
+  margin-top: 20vh;
+}
+
+button {
+  padding: 25px;
+  font-weight: bold;
 }
