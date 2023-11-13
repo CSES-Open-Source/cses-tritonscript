@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Anton');
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   text-rendering: optimizeLegibility;
@@ -6,4 +8,50 @@
   -webkit-text-size-adjust: 100%;
   margin: 0;
   padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(to right, #172554 75%, yellow );
+  font-family: 'Anton', sans-serif;
+}
+/*
+form {
+  display: flex;
+
+}*/
+
+form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: auto;
+  gap: 25px;
+}
+
+form > input {
+  opacity: 50%;
+  margin: 0 35%;
+  padding: 15px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* className="flex flex-col gap-4"> */
+
+div {
+  text-align: center;
+  margin-top: 20vh;
+}
+
+button {
+  padding: 15px;
+  font-weight: bold;
+  margin: 0 45%;
+  border-radius: 10px;
+  font-family: 'Anton', sans-serif;
+}
+
+Link {
+  text-decoration: none;
 }

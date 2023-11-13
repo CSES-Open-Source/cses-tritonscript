@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { signInStart, signInSuccess, signInFailure } from "../utils/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import settings from "../utils/config";
-import '../../src/index.css';
+import '../../src/App.css';
 
 export default function SignIn() {
   const dispatch = useDispatch();
@@ -47,9 +47,12 @@ export default function SignIn() {
   return (
     <div>
       <h1>Sign In</h1>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-        <input type="email" placeholder="Email" id="email" onChange={handleChange} />
-        <input type="password" placeholder="Password" id="password" onChange={handleChange} />
+      <form onSubmit={handleSubmit}>
+        <input type="email" placeholder="Email" id="email" onChange={handleChange}/>
+        <input type="password" placeholder="Password" id="password" onChange={handleChange}/>
+        <Link to="#">
+          <span>Forgot Password</span>
+        </Link>
         <button disabled={loading}>{loading ? "Loading..." : "Sign In"}</button>
       </form>
       <div>
