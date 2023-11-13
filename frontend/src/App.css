@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Anton');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -14,13 +15,10 @@ body {
   margin: 0;
   padding: 0;
   background-image: linear-gradient(to right, #172554 75%, yellow );
-  font-family: 'Anton', sans-serif;
+  font-family: 'Oswald', sans-serif;
+  background-image: url("./assets/images/background.jpg");
+  padding: 0 0 50px 0;
 }
-/*
-form {
-  display: flex;
-
-}*/
 
 form {
   display: flex;
@@ -37,11 +35,21 @@ form > input {
   font-family: 'Courier New', Courier, monospace;
 }
 
-/* className="flex flex-col gap-4"> */
+.link-styles {
+  text-decoration: none;
+  color: #d4d4d8;
+}
 
 div {
   text-align: center;
   margin-top: 20vh;
+}
+
+.google {
+  margin: 5vh 0;
+  background-color: #1e3a8a;
+  padding: 15px;
+  border-radius: 10%;
 }
 
 button {
@@ -49,9 +57,11 @@ button {
   font-weight: bold;
   margin: 0 45%;
   border-radius: 10px;
-  font-family: 'Anton', sans-serif;
+  font-family: 'Playfair Display', sans-serif;
+  opacity: 50%;
+  font-size: 20px;
 }
 
-Link {
-  text-decoration: none;
+img {
+  width: 17%;
 }

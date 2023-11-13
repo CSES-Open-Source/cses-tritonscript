@@ -4,6 +4,7 @@ import { signInStart, signInSuccess, signInFailure } from "../utils/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import settings from "../utils/config";
 import '../../src/App.css';
+import logo from '../assets/images/cses_opensource_png_720.png'
 
 export default function SignIn() {
   const dispatch = useDispatch();
@@ -46,18 +47,17 @@ export default function SignIn() {
 
   return (
     <div>
-      <h1>Sign In</h1>
+      <img src={logo} alt="CSES Open Source logo"/>
       <form onSubmit={handleSubmit}>
         <input type="email" placeholder="Email" id="email" onChange={handleChange}/>
         <input type="password" placeholder="Password" id="password" onChange={handleChange}/>
-        <Link to="#">
+        <Link to="#" className={"link-styles"}>
           <span>Forgot Password</span>
         </Link>
         <button disabled={loading}>{loading ? "Loading..." : "Sign In"}</button>
       </form>
       <div>
-        <p>Dont Have an account?</p>
-        <Link to="/signup">
+        <Link to="/signup" className={"link-styles google"}>
           <span>Sign in with Google</span>
         </Link>
       </div>
