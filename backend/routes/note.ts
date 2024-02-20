@@ -11,7 +11,6 @@ router.get("/notes", notes);
 //post new note
 router.post("/:id", upload);
 
-router.post("/test1", pullTest1);
 
 //
 router.get("/")
