@@ -7,18 +7,18 @@ export function test(req, res) {
   });
 }
 
-// get all notes
-
+// get all notes at the same time and sort by recent on top 
 export async function notes(req, res, next) {
   try {
-    const notes = await Note.find();
+    //sort by updatedAt vs createdAt;
+    const notes = await Note.find().sort({updatedAt: -1});
     res.status(200).json(notes);
   } catch (error) {
     next(error);
   }
 }
-// update user
 
+// update user
 export async function upload(req, res, next) {
   try {
     const rest = await r2.url("cses", req.params.id);
@@ -38,3 +38,7 @@ export async function upload(req, res, next) {
     next(error);
   }
 }
+
+
+
+
