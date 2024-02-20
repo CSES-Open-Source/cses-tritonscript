@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import OAuth from "../components/OAuth";
-import settings from "../utils/config";
+//import settings from "../utils/config";
 import { useSelector } from "react-redux";
+import { auth } from "../firebase";
+//import firebase from "firebase/compat/app";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 export default function SignUp() {
   const [formData, setFormData] = useState({});
@@ -16,28 +19,52 @@ export default function SignUp() {
 
   async function handleSubmit(e: any) {
     e.preventDefault();
-    try {
-      setLoading(true);
-      setError(false);
-      const res = await fetch(`${settings.domain}/api/auth/signup`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-      const data = await res.json();
-      console.log(data);
-      setLoading(false);
-      if (data.success === false) {
-        setError(true);
-        return;
-      }
-      navigate("/signin");
-    } catch (error) {
-      setLoading(false);
-      setError(true);
-    }
+    setLoading(true);
+    setError(false);
+    console.log(e.target[0]);
+    const email = e.target[1].value;
+    const password = e.target[2].value;
+    await createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            // Signed in
+            const user = userCredential.user;
+            console.log(user);
+            setLoading(false);
+            navigate("/signin");
+            // ...
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode, errorMessage);
+            // ..
+            setLoading(false);
+            setError(true);
+        });
+
+
+    // try {
+    //   setLoading(true);
+    //   setError(false);
+    //   const res = await fetch(`${settings.domain}/api/auth/signup`, {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify(formData),
+    //   });
+    //   const data = await res.json();
+    //   console.log(data);
+    //   setLoading(false);
+    //   if (data.success === false) {
+    //     setError(true);
+    //     return;
+    //   }
+    //   navigate("/signin");
+    // } catch (error) {
+    //   setLoading(false);
+    //   setError(true);
+    // }
   }
 
   useEffect(() => {
