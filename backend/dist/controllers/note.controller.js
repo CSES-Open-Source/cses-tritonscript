@@ -21,11 +21,12 @@ function test(req, res) {
     });
 }
 exports.test = test;
-// get all notes
+// get all notes at the same time and sort by recent on top 
 function notes(req, res, next) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const notes = yield note_models_1.default.find();
+            //sort by updatedAt vs createdAt;
+            const notes = yield note_models_1.default.find().sort({ updatedAt: -1 });
             res.status(200).json(notes);
         }
         catch (error) {
