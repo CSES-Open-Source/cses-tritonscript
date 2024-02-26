@@ -1,0 +1,27 @@
+.button {
+    display: inline-flex;
+    align-items: stretch;
+    cursor: pointer;
+    transition: all;
+    transition-duration: 220ms;
+    user-select: none;
+}
+
+.button:hover {
+    box-shadow: #ffffff30 0 0 3px 3px;
+}
+
+.googleLogo {
+    padding: 1rem;
+    background-color: white;
+}
+
+.text {
+    background-color: black;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 2rem;
+    color: white;
+    font-weight: bold;
+    font-size: large;
+}

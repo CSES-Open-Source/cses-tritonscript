@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { signInStart, signInSuccess, signInFailure } from "../utils/userSlice";
+import { signInFailure, signInStart, signInSuccess } from "../utils/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 // import settings from "../utils/config";
 import { auth } from "../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import "./SignIn.css";
 import logoUrl from "../assets/cses-opensource.png";
+import GoogleAuthButton from "../components/GoogleAuthButton/GoogleAuthButton.tsx";
 
 export default function SignIn() {
   const dispatch = useDispatch();
@@ -60,20 +61,19 @@ export default function SignIn() {
       <img src={logoUrl} alt={"CSES Open-Source logo"} />
 
       <p className={error ? "sign-in-error" : ""}>
-        {error ? error.message || "Something went wrong!" : loading ? "Loading..." : ""}
+        {error ? error.message || "Something went wrong!" : ""}
       </p>
 
       <div className={"sign-in-form"}>
         <form onSubmit={handleSubmit}>
           <input type="email" placeholder="Email" id="email" onChange={handleChange} />
           <input type="password" placeholder="Password" id="password" onChange={handleChange} />
-          <button>Sign in</button>
-          {/*Not in figma design -> <button disabled={loading}>{loading ? "Loading..." : "Sign In"}</button>*/}
+          <button disabled={loading}>{loading ? "Loading..." : "Sign In"}</button>
         </form>
         <p className={"forgot-password"}>Forgot your password?</p>
       </div>
 
-      <a className={"google-login"}>Sign in with Google</a>
+      <GoogleAuthButton text={"Sign in with Google"} />
     </div>
   );
 }
