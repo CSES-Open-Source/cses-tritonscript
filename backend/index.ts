@@ -7,7 +7,9 @@ import bodyParser from "body-parser";
 import user from "./routes/user";
 import auth from "./routes/auth";
 import note from "./routes/note";
+import event from "./routes/event";
 import settings from "./utils/config";
+
 
 dotenv.config();
 
@@ -26,6 +28,7 @@ app.use(cors({ credentials: true, origin: settings.domain }));
 app.use("/api/user", user);
 app.use("/api/auth", auth);
 app.use("/api/note", note);
+app.use("/api/event", event);
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Express + TypeScript Server");
