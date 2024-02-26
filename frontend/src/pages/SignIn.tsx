@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { signInStart, signInSuccess, signInFailure } from "../utils/userSlice";
 import { useDispatch, useSelector } from "react-redux";
-import settings from "../utils/config";
+//import settings from "../utils/config";
+import { auth } from "../firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 export default function SignIn() {
   const dispatch = useDispatch();
@@ -19,21 +21,21 @@ export default function SignIn() {
     e.preventDefault();
     try {
       dispatch(signInStart());
-      const res = await fetch(`${settings.domain}/api/auth/signin`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include", // This here
-        body: JSON.stringify(formData),
+      const email = e.target[1].value;
+      const password = e.target[2].value;
+      signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        dispatch(signInSuccess(user));
+        // ...
+        navigate("/");
       });
-      const data = await res.json();
-      if (data.success === false) {
-        dispatch(signInFailure(data));
-        return;
-      }
-      dispatch(signInSuccess(data));
-      navigate("/");
+      // .catch((error) => {
+      //   const errorCode = error.code;
+      //   const errorMessage = error.message;
+      // });
+      
     } catch (error) {
       dispatch(signInFailure(error));
     }
