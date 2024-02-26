@@ -18,6 +18,18 @@ export async function notes(req, res, next) {
   }
 }
 
+// search database for notes that contain name.
+export async function searchForNoteByName(req, res, next){
+    try {
+      const regex = new RegExp(req.params.name, "i")  
+      const events = await Note.find({ note_id: regex });
+        res.status(200).json(events);
+        
+      } catch (error) {
+        next(error);
+      }
+}
+
 // update user
 export async function upload(req, res, next) {
   try {

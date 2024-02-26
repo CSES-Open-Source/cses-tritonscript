@@ -40,18 +40,17 @@ export async function upload(req, res, next) {
   }
 }
 
-// export async function searchForEventByName(req, res, next){
-//     try {
+// search events by name
+export async function searchForEventByName(req, res, next){
+    try {
+      const regex = new RegExp(req.params.name, "i")  
+      const events = await Event.find({ event_id: regex });
+        res.status(200).json(events);
         
-//       const events = await Event.find().filter((event) => {
-//         event.title.includes(req.params.name);
-//     });
-//         res.status(200).json(events);
-        
-//       } catch (error) {
-//         next(error);
-//       }
-// }
+      } catch (error) {
+        next(error);
+      }
+}
 
 
 

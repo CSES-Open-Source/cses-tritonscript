@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.upload = exports.notes = exports.test = void 0;
+exports.upload = exports.searchForNoteByName = exports.notes = exports.test = void 0;
 const note_models_1 = __importDefault(require("../models/note.models"));
 const r2_1 = __importDefault(require("../utils/r2"));
 function test(req, res) {
@@ -35,6 +35,20 @@ function notes(req, res, next) {
     });
 }
 exports.notes = notes;
+// search database for notes that contain name.
+function searchForNoteByName(req, res, next) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const regex = new RegExp(req.params.name, "i");
+            const events = yield note_models_1.default.find({ note_id: regex });
+            res.status(200).json(events);
+        }
+        catch (error) {
+            next(error);
+        }
+    });
+}
+exports.searchForNoteByName = searchForNoteByName;
 // update user
 function upload(req, res, next) {
     return __awaiter(this, void 0, void 0, function* () {
