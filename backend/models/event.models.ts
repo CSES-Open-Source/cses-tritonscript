@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 
 const eventSchema = new mongoose.Schema(
   {
+    //make event id serial number and auto incrementing 
     event_id: {
       type: String,
       required: true,
