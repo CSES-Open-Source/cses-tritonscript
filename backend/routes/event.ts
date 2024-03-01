@@ -14,6 +14,5 @@ router.get("/search/:name",searchForEventByName);
 // upload event with id
 router.post("/:id", upload);
 
-
 router.get("/")
 export default router;

@@ -4,7 +4,7 @@ const eventSchema = new mongoose.Schema(
   {
     //make event id serial number and auto incrementing 
     event_id: {
-      type: String,
+      type: Number,
       required: true,
       unique: true,
     },

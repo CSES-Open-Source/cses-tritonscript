@@ -1,5 +1,6 @@
 import { runInNewContext } from "vm";
 import Event from "../models/event.models";
+import Counter from "../models/counter.models";
 import r2 from "../utils/r2";
 
 export function test(req, res) {
@@ -23,10 +24,26 @@ export async function events(req, res, next) {
 export async function upload(req, res, next) {
   try {
     const rest = await r2.url("cses", req.params.id);
-    const { title, organizationInfo, description, dateAndTime, isPublic, uploader, currentUser } = req.body;
+    const { organizationInfo, description, dateAndTime, isPublic, uploader, currentUser } = req.body;
+    const counter = await Counter.findOne({counter_type: "Events"});
+    var id;
+    // check if counter element already exists, create one if it doesn't.
+    if (counter == null) {
+        const newCounter = new Counter({
+            counter_type: "Events",
+            count: 0,
+        });
+        await newCounter.save();
+        id = 0;
+    } else {
+        // increment counter element
+        id = (counter.count == undefined) ? 9999 : counter.count + 1;
+        const update = { count: id};
+        const res = await Counter.findOneAndUpdate({counter_type: "Events"}, update, {includeResultMetadata: true});
+    }
     const newEvent = new Event({
-      event_id: req.params.id,
-      title,
+      event_id: id,
+      title: req.params.id,
       organizationInfo,
       description,
       dateAndTime,

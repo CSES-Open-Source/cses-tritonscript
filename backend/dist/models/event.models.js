@@ -7,7 +7,7 @@ const mongoose_1 = __importDefault(require("mongoose"));
 const eventSchema = new mongoose_1.default.Schema({
     //make event id serial number and auto incrementing
     event_id: {
-        type: String,
+        type: Number,
         required: true,
         unique: true,
     },
