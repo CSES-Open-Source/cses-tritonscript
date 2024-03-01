@@ -14,6 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.searchForEventByName = exports.upload = exports.events = exports.test = void 0;
 const event_models_1 = __importDefault(require("../models/event.models"));
+const counter_models_1 = __importDefault(require("../models/counter.models"));
 const r2_1 = __importDefault(require("../utils/r2"));
 function test(req, res) {
     res.json({
@@ -40,10 +41,27 @@ function upload(req, res, next) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const rest = yield r2_1.default.url("cses", req.params.id);
-            const { title, organizationInfo, description, dateAndTime, isPublic, uploader, currentUser } = req.body;
+            const { organizationInfo, description, dateAndTime, isPublic, uploader, currentUser } = req.body;
+            const counter = yield counter_models_1.default.findOne({ counter_type: "Events" });
+            var id;
+            // check if counter element already exists, create one if it doesn't.
+            if (counter == null) {
+                const newCounter = new counter_models_1.default({
+                    counter_type: "Events",
+                    count: 0,
+                });
+                yield newCounter.save();
+                id = 0;
+            }
+            else {
+                // increment counter element
+                id = (counter.count == undefined) ? 9999 : counter.count + 1;
+                const update = { count: id };
+                const res = yield counter_models_1.default.findOneAndUpdate({ counter_type: "Events" }, update, { includeResultMetadata: true });
+            }
             const newEvent = new event_models_1.default({
-                event_id: req.params.id,
-                title,
+                event_id: id,
+                title: req.params.id,
                 organizationInfo,
                 description,
                 dateAndTime,

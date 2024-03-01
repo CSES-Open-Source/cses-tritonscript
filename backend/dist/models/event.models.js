@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 const eventSchema = new mongoose_1.default.Schema({
     event_id: {
-        type: String,
+        type: Number,
         required: true,
         unique: true,
     },
