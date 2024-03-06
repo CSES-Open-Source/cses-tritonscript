@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { auth } from "../firebase";
 //import firebase from "firebase/compat/app";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import GoogleAuthButton from "../components/GoogleAuthButton/GoogleAuthButton.tsx";
 
 export default function SignUp() {
   const [formData, setFormData] = useState({});
@@ -111,6 +112,8 @@ export default function SignUp() {
         </Link>
       </div>
       <p className="text-red-700 mt-5">{error && "Something went wrong!"}</p>
+
+      <GoogleAuthButton text={"Sign up with Google"} />
     </div>
   );
 }
