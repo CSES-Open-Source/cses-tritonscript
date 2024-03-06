@@ -9,10 +9,9 @@ const note_controller_2 = require("../controllers/note.controller");
 const note_controller_3 = require("../controllers/note.controller");
 const router = express_1.default.Router();
 // get all notes in order of updatedAt
-router.get("/notes", note_controller_2.notes);
+router.get("/", note_controller_2.notes);
+// get all notes containing a given search string
+router.get("/search/:name", note_controller_3.searchForNoteByName);
 //post new note
 router.post("/:id", note_controller_1.upload);
-router.post("/test1", note_controller_3.pullTest1);
-//
-router.get("/");
 exports.default = router;
