@@ -6,4 +6,8 @@
   -webkit-text-size-adjust: 100%;
   margin: 0;
   padding: 0;
+
+  /* For testing before we add the gradient background */
+  background-color: #01043F;
+  color: white; /* We want to see text by default */
 }
