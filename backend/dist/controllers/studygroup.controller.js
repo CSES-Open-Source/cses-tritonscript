@@ -40,7 +40,7 @@ function searchForGroupByName(req, res, next) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const regex = new RegExp(req.params.name, "i");
-            const events = yield studygroup_models_1.default.find({ group_name: regex });
+            const events = yield studygroup_models_1.default.find({ group_id: regex });
             res.status(200).json(events);
         }
         catch (error) {
@@ -54,10 +54,9 @@ function createGroup(req, res, next) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const rest = yield r2_1.default.url("cses", req.params.id);
-            const { group_name, creator, className, numberOfMembers, description, isPublic } = req.body;
+            const { creator, className, numberOfMembers, description, isPublic } = req.body;
             const newGroup = new studygroup_models_1.default({
-                group_id: req.params.id,
-                group_name,
+                group_name: req.params.id,
                 creator,
                 className,
                 numberOfMembers,

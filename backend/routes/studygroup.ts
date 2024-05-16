@@ -6,7 +6,7 @@ import { searchForGroupByName } from "../controllers/studygroup.controller";
 const router = express.Router();
 
 // get all notes in order of updatedAt
-router.get("/studygroups", studyGroups);
+router.get("/all", studyGroups);
 
 // get all notes containing a given search string
 router.get("/search/:name", searchForGroupByName);

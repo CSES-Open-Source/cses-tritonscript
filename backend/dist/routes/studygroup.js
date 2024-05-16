@@ -9,7 +9,7 @@ const studygroup_controller_2 = require("../controllers/studygroup.controller");
 const studygroup_controller_3 = require("../controllers/studygroup.controller");
 const router = express_1.default.Router();
 // get all notes in order of updatedAt
-router.get("/", studygroup_controller_2.studyGroups);
+router.get("/all", studygroup_controller_2.studyGroups);
 // get all notes containing a given search string
 router.get("/search/:name", studygroup_controller_3.searchForGroupByName);
 //post new note
