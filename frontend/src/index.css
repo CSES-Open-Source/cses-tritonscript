@@ -2,3 +2,22 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.errorText {
+  color: #da6060; /* Random error color for now */
+}
+
+.csesLogo {
+  max-height: 25vh;
+  max-width: 100%;
+}
+
+/* I'm not sure how shared this will be */
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  color: rgba(245, 245, 245, 0.58);
+}
