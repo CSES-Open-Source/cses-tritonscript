@@ -8,6 +8,7 @@ import user from "./routes/user";
 import auth from "./routes/auth";
 import note from "./routes/note";
 import event from "./routes/event";
+import studygroup from "./routes/studygroup";
 import settings from "./utils/config";
 
 
@@ -29,6 +30,7 @@ app.use("/api/user", user);
 app.use("/api/auth", auth);
 app.use("/api/note", note);
 app.use("/api/event", event);
+app.use("/api/studygroup", studygroup);
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Express + TypeScript Server");
