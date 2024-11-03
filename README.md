@@ -1,6 +1,4 @@
-# Computer Science and Engineering Society (CSES) at UCSD
-
-## CSES TritonScript
+# TritonScript
 
 #### Repository for the Open Source Project undertaken by the Computer Science and Engineering Society @ UC San Diego.
 
@@ -10,28 +8,6 @@ Join our [discord](https://discord.gg/pP4B9u25Vs) here!
 
 ## Issues
 You can find all the open issues under the "Issues" tab. Choose one of the issues and implement that feature following the steps described [here](#how-it-works). Whenever you open a pull request (step 4 in the steps described), make sure you add the corresponding issue to the PR.
-
-# Project Leaderboard
-
-Here are the top contributors to our project:
-
-1. [Yashil Vora](https://github.com/yashilvora19) - 10 commits
-2. [Hogun Kim](https://github.com/03hgryan) - 8 commits
-3. [Georgio Feghani](link_to_contributor_3) - 7 commits
-4. [Mishka Jethwani](link_to_contributor_4) - 6 commits
-5. [Nabil Khoury](link_to_contributor_5) - 5 commits
-
-Thank you to all our contributors for their hard work and dedication!
-
-### About the Project
-
-Our goal is to create a platform where every CSES member can actively contribute to building a valuable resource for UCSD students. We aim to develop a community-driven forum for sharing class notes and educational resources. This project encompasses the following key features:
-
-- **Repository of Class Notes:** A central repository where students can share their class notes and resources.
-- **UCSD Credentials Login:** Securely log in using your UCSD credentials to ensure the authenticity of contributors.
-- **Course Contributions:** Any student can add a class they've taken and contribute by uploading their class/personal notes.
-- **Collaborative ed-platform:** A centralized hub with notes for various classes that anyone can contribute to.
-- **NLP Integration:** Potential integration of Natural Language Processing (NLP) to convert handwritten text to PDFs, verify uploaded documents, and more.
 
 ### How it Works
 
@@ -126,39 +102,3 @@ npm install -g pnpm
    ```sh
    pnpm run dev
    ```
-
-## Milestones
-
-Complete any of the milestones to redeem points and rewards. We will contact you when your PR is approved! Put in your name, email, PID, year, and major in the pull request description in order for us to contact you with the rewards once you complete a milestone.
-
-Here are the current milestones:
-
-**US #1.1:** Create a Login Page that redirects to the UCSD user authentication page. (Frontend)
-
-**US #1.2:** Create a Login Page that redirects to the UCSD user authentication page. (Backend)
-
-**US #2:** Develop the user dashboard with an overview of recent notes, notifications, and upcoming events. (Frontend)
-
-**US #3:** Implement quick access links to different sections or pages of the website in the dashboard header. (Frontend)
-
-**US #4.1:** Create the Notes Upload Page with fields for adding a title, course info, description, tags, and attachment options (PDF, images, etc.). (Frontend)
-
-**US #4.2:** Create the Notes Upload Page with fields for adding a title, course info, description, tags, and attachment options (PDF, images, etc.). (Backend)
-
-**US #5.1:** Develop the Notes Listing Page with filters for sorting notes by course, date, popularity, or tags Frontend
-
-
-Feel free to work on any one of these milestones and submit a PR including your information. 
-
-Join our [discord](https://discord.gg/pP4B9u25Vs) here! Announce which User Story you're working on (US #1, US #2, etc) in the `general` channel and have discussions in the `cses-tritonscript` forum channel!
-
-**Open Source Team:**
-
-- Yashil Vora: President (yvora@ucsd.edu)
-- Hogun Kim: Developer (hok008@ucsd.edu)
-- Georgio Feghali: Developer (gfeghali@ucsd.edu)
-- Mishka Jethwani: Developer (mjethwani@ucsd.edu)
-- Haley Fernandez: Developer (hjfernandez@ucsd.edu)
-- Shravi Jain: Developer (shj009@ucsd.edu)
-
-Feel free to get in touch with any of us if you have questions or need help with getting started!
