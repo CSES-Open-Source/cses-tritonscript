@@ -1,5 +1,7 @@
 # Project Guidelines
 
+## 1. Git
+
 ### 1.1 Some Git rules
 
 There are a set of rules to keep in mind:
@@ -109,3 +111,11 @@ Having a good guideline for creating commits and sticking to it makes working wi
 
 - Use the body to explain **what** and **why** as opposed to **how**.
 
+## 2. Documentation
+
+- Keep `README.md` updated as a project evolves.
+- Comment your code. Try to make it as clear as possible what you are intending with each major section.
+- If there is an open discussion on GitHub or stackoverflow about the code or approach you're using, include the link in your comment.
+- Don't use comments as an excuse for a bad code. Keep your code clean.
+- Don't use clean code as an excuse to not comment at all.
+- Keep comments relevant as your code evolves.
