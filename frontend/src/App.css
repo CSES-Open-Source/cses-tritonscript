@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playpen+Sans:wght@100..800&family=Playwrite+CU:wght@100..400&display=swap');
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   text-rendering: optimizeLegibility;
@@ -6,8 +7,14 @@
   -webkit-text-size-adjust: 100%;
   margin: 0;
   padding: 0;
+  height: 100%;
 
   /* For testing before we add the gradient background */
-  background-color: #01043F;
+  background: linear-gradient(0deg, rgba(94,80,66,1) 0%, rgba(1,4,63,1)100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: rgba(1,4,63,1);
   color: white; /* We want to see text by default */
+  font-family: "Outfit", sans-serif;
 }
