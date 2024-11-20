@@ -4,20 +4,24 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
-const eventSchema = new mongoose_1.default.Schema({
-    //make event id serial number and auto incrementing 
-    event_id: {
-        type: Number,
+const studyGroupSchema = new mongoose_1.default.Schema({
+    group_name: {
+        type: String,
         required: true,
         unique: true,
     },
-    title: {
+    creator: {
         type: String,
         required: false,
         unique: false,
     },
-    organizationInfo: {
+    className: {
         type: String,
+        required: false,
+        unique: false,
+    },
+    numberOfMembers: {
+        type: Number,
         required: false,
         unique: false,
     },
@@ -26,26 +30,11 @@ const eventSchema = new mongoose_1.default.Schema({
         required: false,
         unique: false,
     },
-    dateAndTime: {
-        type: Number,
-        required: false,
-        unique: false,
-    },
     isPublic: {
         type: Boolean,
         required: false,
         unique: false,
     },
-    uploader: {
-        type: String,
-        required: false,
-        unique: false,
-    },
-    file_id: {
-        type: String,
-        required: false,
-        unique: false,
-    },
 }, { timestamps: true });
-const Event = mongoose_1.default.model("Event", eventSchema);
-exports.default = Event;
+const StudyGroup = mongoose_1.default.model("Study Group", studyGroupSchema);
+exports.default = StudyGroup;
