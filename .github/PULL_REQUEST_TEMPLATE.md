@@ -1,8 +1,4 @@
-## Title
-_Provide a succinct and descriptive title for the pull request, e.g., "Improve caching mechanism for API calls". Ideally, it should be the same as the issue this pull request is for._
-
 ## What type of PR is this? (check all applicable)
-
 - [ ] Refactor
 - [ ] Feature
 - [ ] Bug Fix
@@ -10,20 +6,16 @@ _Provide a succinct and descriptive title for the pull request, e.g., "Improve c
 - [ ] Documentation Update
 
 ## Description
-_Provide a detailed explanation of the changes you have made. Include the reasons behind these changes and any relevant context._
+Provide a detailed explanation of the changes you have made. Include the reasons behind these changes and any relevant context.
 
 ## Related Issue
-
 - Closes #
 
 ## QA Instructions, Screenshots, Recordings
-
-_Please replace this line with instructions on how to test your changes, a note
-on the devices and browsers this has been tested on, as well as any relevant
-images for UI changes._
+Please replace this line with instructions on how to test your changes, a note on the devices and browsers this has been tested on, as well as any relevant images for UI changes.
 
 ## Additional Information
-[Any additional information that reviewers should be aware of.]
+Any additional information that reviewers should be aware of.
 
 ## Checklist
 - [ ] My code adheres to the coding and style guidelines of the project.
