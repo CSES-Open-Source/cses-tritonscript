@@ -3,15 +3,17 @@
     min-height: 100vh;
   }
 
-  .key-features-title {
+.key-features-title {
     display: inline-block;
-    padding: 0px 20px 10px 20px;
-    width: 40%;
+    padding: 0px 20px 0px 20px;
     margin: 0 auto 30px auto;
     border-radius: 30px;
     background-color: rgba(0, 4, 62, 0.7);
     letter-spacing: 10px;
     word-spacing: 15px;
+    max-width: 80%;
+    text-align: center;
+    overflow-wrap: break-word; 
 }
 
 
@@ -23,9 +25,9 @@
 .features-title {
     font-size: 3rem;
     font-weight: bold;
-    margin-bottom: 30px;
     color: rgba(255, 255, 255, 0.76);
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    word-break: break-word;
 }
   
 .features-grid {
@@ -33,7 +35,8 @@
     flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    width: 100%;
   }
   
 .feature-card {
@@ -55,7 +58,7 @@
 }
 
 .feature-title {
-    font-size: 1.75rem;
+    font-size: 2rem;
     font-weight: bold;
     color: #d1d5db;
     letter-spacing: 4px;
@@ -130,4 +133,56 @@
     width: 40%; 
     height: auto; 
     align-self: flex-start; 
+}
+
+@media screen and (max-width: 800px) {
+    .feature-card {
+        width: 250px;
+        min-height: 25vh;
+    }
+    .features-grid {
+        gap: 20px;
+        flex-direction: column;
+    }
+    .features-title {
+        letter-spacing: 15px;
+        word-spacing: 10px;
+        font-size: 2.5rem;
+    }
+    .key-features-title {
+        margin: 0 auto 20px auto;
+        padding-bottom: 0;
+        min-width: 50%;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .feature-title {
+        font-size: 1.5rem;
+        letter-spacing: 3px;
+        word-spacing: 5px;
+    }
+    
+    .feature-title p {
+        font-size: 0.875rem;
+    }
+      
+    .feature-text {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    .feature-card {
+        width: 200px;
+        border-radius: 15px;
+    }
+    .features-title {
+        letter-spacing: 10px;
+        word-spacing: 7px;
+        font-size: 1.5rem;
+    }
+    .key-features-title {
+        padding-bottom: 0;
+        border-radius: 20px;
+        width: 100%;
+    }
 }
