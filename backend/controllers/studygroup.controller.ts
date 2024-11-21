@@ -22,7 +22,7 @@ export async function studyGroups(req, res, next) {
 export async function searchForGroupByName(req, res, next){
     try {
       const regex = new RegExp(req.params.name, "i")  
-      const events = await StudyGroup.find({ group_id: regex });
+      const events = await StudyGroup.find({ group_name: regex });
         res.status(200).json(events);
         
       } catch (error) {
@@ -34,9 +34,10 @@ export async function searchForGroupByName(req, res, next){
 export async function createGroup(req, res, next) {
   try {
     const rest = await r2.url("cses", req.params.id);
-    const {creator, className, numberOfMembers, description, isPublic} = req.body;
+    const { group_name, creator, className, numberOfMembers, description, isPublic} = req.body;
     const newGroup = new StudyGroup({
-      group_name: req.params.id,
+      group_id: req.params.id,
+      group_name,
       creator,
       className,
       numberOfMembers,

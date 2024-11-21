@@ -2,6 +2,11 @@ import mongoose from "mongoose";
 
 const studyGroupSchema = new mongoose.Schema(
   {
+    group_id: {
+        type: String,
+        required: true,
+        unique: true,
+    },
     group_name: {
         type: String,
         required: true,
@@ -9,18 +14,18 @@ const studyGroupSchema = new mongoose.Schema(
     },
     creator: {
       type: String,
-      required: false, //true
-      unique: false,
+      required: true,
+      unique: true,
     },
     className: {
         type: String,
-        required: false, //true
+        required: true,
         unique: false,
     },
     numberOfMembers: {
       type: Number,
-      required: false, //true
-      unique: false,
+      required: true,
+      unique: true,
     },
     description: {
       type: String,

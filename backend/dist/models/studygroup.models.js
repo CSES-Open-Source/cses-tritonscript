@@ -5,6 +5,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 const studyGroupSchema = new mongoose_1.default.Schema({
+    group_id: {
+        type: String,
+        required: true,
+        unique: true,
+    },
     group_name: {
         type: String,
         required: true,
@@ -12,18 +17,18 @@ const studyGroupSchema = new mongoose_1.default.Schema({
     },
     creator: {
         type: String,
-        required: false,
-        unique: false,
+        required: true,
+        unique: true,
     },
     className: {
         type: String,
-        required: false,
+        required: true,
         unique: false,
     },
     numberOfMembers: {
         type: Number,
-        required: false,
-        unique: false,
+        required: true,
+        unique: true,
     },
     description: {
         type: String,
