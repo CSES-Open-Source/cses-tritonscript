@@ -28,7 +28,7 @@ export default function Home() {
         <h3 className="title-small">An Open Source Initiative</h3>
       </div>
       <div className="welcome-text">
-        <p className="welcome-line">Welcome to the CSES Open Source Class Notes Repository Project!</p> 
+        <p>Welcome to the CSES Open Source Class Notes Repository Project!</p> 
         <p>This repository is a collaborative effort undertaken by the 
             Computer Science and Engineering Society (CSES) at the University of California, San Diego (UCSD)
           </p>

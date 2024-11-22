@@ -106,10 +106,6 @@
     font-weight: 600;
 }
 
-.welcome-line{
-    line-height: 0.25;
-}
-
 .goal-text-grid {
     color: #e5e7eb; 
     display: flex;
