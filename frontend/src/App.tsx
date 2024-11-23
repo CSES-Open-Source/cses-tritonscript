@@ -8,6 +8,7 @@ import SignUp from "./pages/SignUp";
 import Profile from "./pages/Profile";
 import Note from "./pages/Note";
 import Upload from "./pages/Upload";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/note" element={<Note />} />
           <Route path="/upload" element={<Upload />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Route>
       </Routes>
     </BrowserRouter>
