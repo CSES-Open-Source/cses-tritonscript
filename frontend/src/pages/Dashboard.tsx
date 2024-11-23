@@ -1,6 +1,9 @@
+
 import { useState, useEffect } from "react";
 import NoteBlock from "../components/NoteBlock";
 import settings from "../utils/config";
+import filter from '../assets/filter-icon.png';
+import "../../src/pages/Dashboard.css";
 
 export default function Dashboard() {
   const [notes, setNotes] = useState([]);
@@ -29,6 +32,18 @@ export default function Dashboard() {
   // Render dashboard with notes
   return (
     <div>
+        <div>
+        <div>dashboard</div>
+        <div className="search-features">
+        <input className="search-input"
+          type="text"
+          placeholder="Search..."
+        />
+        <div className="filter">
+          <img className="logo" src={filter} alt="search filter icon" />
+        </div>
+        </div>
+        </div>
       <h1>Dashboard</h1>
       <div>
         {notes.length > 0 ? (
