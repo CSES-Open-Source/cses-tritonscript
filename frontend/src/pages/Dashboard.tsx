@@ -1,8 +1,11 @@
-
 import { useState, useEffect } from "react";
 import NoteBlock from "../components/NoteBlock";
+import ClassNote from "../components/ClassNotes/ClassNotes.tsx";
+
 import settings from "../utils/config";
 import filter from '../assets/filter-icon.png';
+import edit from '../assets/edit.png';
+import note from '../assets/placeholder-notes.png';
 import "../../src/pages/Dashboard.css";
 
 export default function Dashboard() {
@@ -49,17 +52,33 @@ export default function Dashboard() {
   // Render dashboard with notes
   return (
     <div>
-        <div>
-        <div>dashboard</div>
-        <div className="search-features">
-        <input className="search-input"
-          type="text"
-          placeholder="Search..."
-        />
-        <div className="filter">
-          <img className="logo" src={filter} alt="search filter icon" />
-        </div>
-        </div>
+        <div className="dashboard-features">
+          <div className="search-features">
+            <input className="search-input"
+              type="text"
+              placeholder="Search..."
+            />
+            <div className="filter">
+              <img className="filter-logo" src={filter} alt="search filter icon" />
+            </div>
+            <div className="edit">
+              <img className="edit-logo" src={edit} alt="edit icon" />
+            </div>
+          </div>
+          <div className="notes-grid">
+              <div className="recent-notes">
+                <div className="recent-notes-text">
+                  <p><b>RECENT NOTES</b></p>
+                  <img className="placeholder-note" src={note} alt="placeholder note"/>
+                  <img className="placeholder-note" src={note} alt="placeholder note"/>
+                </div>
+              </div>
+              <div className="class-notes">
+                <ClassNote classTitle={"CSE 30"} note={note}/>
+                <ClassNote classTitle={"PHYS 2C"} note={note}/>
+                <ClassNote classTitle={"ECE 65"} note={note}/>
+              </div>
+          </div>
         </div>
       <h1>Dashboard</h1>
       <div>
