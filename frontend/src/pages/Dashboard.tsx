@@ -11,7 +11,7 @@ import "../../src/pages/Dashboard.css";
 export default function Dashboard() {
   const [notes, setNotes] = useState([]);
 
-  // // Function to fetch notes
+  // 
   // async function fetchNotes() {
   //   try {
   //     const response = await fetch(`${settings.domain}/api/note`, {
@@ -27,29 +27,26 @@ export default function Dashboard() {
   //   }
   // }
 
-  // // useEffect to fetch notes on component mount
   // useEffect(() => {
   //   fetchNotes();
   // }, []);
 
-    // Simulate fetching notes with mock data
     useEffect(() => {
       const mockNotes = [
         {
           note_id: 1,
-          title: "Sample Note 1",
+          title: "Sample Note - Physics",
           content: "This is a sample note to simulate functionality.",
         },
         {
           note_id: 2,
-          title: "Sample Note 2",
+          title: "Sample Note 2 - CS",
           content: "Here's another simulated note.",
         },
       ];
-      setNotes(mockNotes); // Set mock notes in the state
+      setNotes(mockNotes); 
     }, []);
 
-  // Render dashboard with notes
   return (
     <div>
         <div className="dashboard-features">
@@ -69,8 +66,22 @@ export default function Dashboard() {
               <div className="recent-notes">
                 <div className="recent-notes-text">
                   <p><b>RECENT NOTES</b></p>
-                  <img className="placeholder-note" src={note} alt="placeholder note"/>
-                  <img className="placeholder-note" src={note} alt="placeholder note"/>
+                  <div>
+                    {notes.length > 0 ? (
+                      notes.map((oneNote) => (
+                        <div key={oneNote.note_id} className="note-container">
+                          <img 
+                            className="placeholder-note-recent" 
+                            src={note} 
+                            alt={oneNote.title || "placeholder note"} 
+                          />
+                          <p className="note-title">{oneNote.title || "Untitled Note"}</p> {/* Title below image */}
+                        </div>
+                      ))
+                    ) : (
+                      <p>No notes available</p>
+                    )}
+                  </div>
                 </div>
               </div>
               <div className="class-notes">
@@ -80,16 +91,6 @@ export default function Dashboard() {
               </div>
           </div>
         </div>
-      <h1>Dashboard</h1>
-      <div>
-        {notes.length > 0 ? (
-          notes.map((note) => (
-            <NoteBlock key={note.note_id} note={note} />
-          ))
-        ) : (
-          <p>No notes available</p>
-        )}
-      </div>
     </div>
   );
 }
