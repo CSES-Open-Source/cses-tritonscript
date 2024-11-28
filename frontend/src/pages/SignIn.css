@@ -1,0 +1,54 @@
+.signInPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    height: 80vh;
+
+}
+
+.home {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.39);
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+
+.signInHeader {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.csesLogo {
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+.signInContainer {
+    background: rgba(109, 113, 168, 0.37);
+    padding: 50px 80px 60px 80px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    margin: 0 20px;
+}
+
+.loginPrompt {
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 40px;
+    color: #ffffff;
+}
+
+@media (max-width: 400px) {
+    .signInHeader {
+        margin-top: 150px;
+    }
+    
+}

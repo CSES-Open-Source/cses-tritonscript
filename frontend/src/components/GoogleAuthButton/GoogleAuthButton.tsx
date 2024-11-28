@@ -23,8 +23,8 @@ export default function GoogleAuthButton({ text }: { text: string }) {
 
   return <div className={classes.button} onClick={handleClick}>
     <div className={classes.googleLogo}>
-      <svg width={48} height={48}>
-        <image width={48} height={48} href={googleLogoUrl} />
+      <svg width={40} height={40}>
+        <image width={40} height={40} href={googleLogoUrl} />
       </svg>
     </div>
     <div className={classes.text}><span>{text}</span></div>

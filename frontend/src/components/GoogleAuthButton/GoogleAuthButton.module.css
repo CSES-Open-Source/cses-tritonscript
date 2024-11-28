@@ -2,9 +2,11 @@
     display: inline-flex;
     align-items: stretch;
     cursor: pointer;
-    transition: all;
-    transition-duration: 220ms;
+    transition: box-shadow 0.2s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 2px 4px;
+    border-radius: 10px;
     user-select: none;
+    overflow: hidden;
 }
 
 .button:hover {
@@ -12,16 +14,20 @@
 }
 
 .googleLogo {
-    padding: 1rem;
-    background-color: white;
+    background-color: black;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .text {
     background-color: black;
     display: inline-flex;
     align-items: center;
-    padding: 0 2rem;
+    justify-content: center;
+    padding-right: 2rem;
     color: white;
     font-weight: bold;
-    font-size: large;
+    font-size: 1.25rem;
 }
