@@ -2,16 +2,26 @@ import styles from './ClassNotes.module.css';
 
 function NoteBlock({
   classTitle,
-  note,
+  notes,
 }: {
   classTitle: string;
-  note: string;
+  notes: string[];
 }) {
   return (
     <div className={styles.noteBlock}>
       <a className={styles.classTitle}>{classTitle}</a>
       <hr className={styles.divider} />
-      <img className={styles.placeholder} src={note} alt={`${classTitle} note`} />
+      <div className={styles.note_placeholder}>
+        {notes.map((note, index) => (
+            <img
+            key={index}
+            className={styles.note}
+            src={note}
+            alt={`${classTitle} note ${index + 1}`}
+          />
+        )
+        )}
+      </div>
     </div>
   );
 }

@@ -5,7 +5,7 @@ import ClassNote from "../components/ClassNotes/ClassNotes.tsx";
 import settings from "../utils/config";
 import filter from '../assets/filter-icon.png';
 import edit from '../assets/edit.png';
-import note from '../assets/placeholder-notes.png';
+import note from '../assets/note-placeholder.png';
 import "../../src/pages/Dashboard.css";
 
 export default function Dashboard() {
@@ -47,6 +47,11 @@ export default function Dashboard() {
       setNotes(mockNotes); 
     }, []);
 
+    const notes_placeholder = [
+      note,
+      note,
+    ];
+
   return (
     <div>
         <div className="dashboard-features">
@@ -66,10 +71,10 @@ export default function Dashboard() {
               <div className="recent-notes">
                 <div className="recent-notes-text">
                   <p><b>RECENT NOTES</b></p>
-                  <div>
+                  <div className="note-container">
                     {notes.length > 0 ? (
                       notes.map((oneNote) => (
-                        <div key={oneNote.note_id} className="note-container">
+                        <div key={oneNote.note_id}>
                           <img 
                             className="placeholder-note-recent" 
                             src={note} 
@@ -85,9 +90,9 @@ export default function Dashboard() {
                 </div>
               </div>
               <div className="class-notes">
-                <ClassNote classTitle={"CSE 30"} note={note}/>
-                <ClassNote classTitle={"PHYS 2C"} note={note}/>
-                <ClassNote classTitle={"ECE 65"} note={note}/>
+                <ClassNote classTitle={"CSE 30"} notes={notes_placeholder}/>
+                <ClassNote classTitle={"PHYS 2C"} notes={notes_placeholder}/>
+                <ClassNote classTitle={"ECE 65"} notes={notes_placeholder}/>
               </div>
           </div>
         </div>

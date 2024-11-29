@@ -8,7 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 90%;
     gap: 15px; 
     margin-top: 5vh;
     margin-left: 150px;
@@ -54,8 +54,9 @@
     gap: 2vw; 
     margin-top: 5vh;
     margin-left:150px;
-    margin-right:150px; */
+    margin-right:150px;
     width: 90%; 
+    justify-content: center;
 }
 
 .recent-notes,
@@ -86,6 +87,9 @@
     padding: 10px 25px 25px 25px;
 }
 
+.note-container{
+    width: 100%;
+}
 .placeholder-note{
     max-width: 100%;
     margin-bottom: 6vh;
