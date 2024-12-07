@@ -1,5 +1,5 @@
 .button {
-    display: inline-flex;
+    display: flex;
     align-items: stretch;
     cursor: pointer;
     transition: box-shadow 0.2s ease-in-out;
@@ -24,10 +24,20 @@
 .text {
     background-color: black;
     display: inline-flex;
+    flex: 1;
     align-items: center;
     justify-content: center;
     padding-right: 2rem;
     color: white;
     font-weight: bold;
     font-size: 1.25rem;
+}
+
+@media (max-width: 490px) {
+    .button {
+        width: 100%;
+    }
+    .text {
+        font-size: 0.85rem;
+    }
 }

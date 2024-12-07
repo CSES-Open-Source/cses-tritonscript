@@ -46,9 +46,12 @@
     color: #ffffff;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 490px) {
     .signInHeader {
         margin-top: 150px;
+    }
+    .signInContainer {
+        padding: 50px 50px 60px 50px;
     }
     
 }
